@@ -5,7 +5,7 @@ data "hcp_packer_image" "acme-webapp" {
   bucket_name     = "acme-webapp"
   channel         = "production"
   cloud_provider  = "aws"
-  region          = "us-east-2"
+  region          = "us-east-1"
 }
 
 resource "aws_instance" "acme" {
