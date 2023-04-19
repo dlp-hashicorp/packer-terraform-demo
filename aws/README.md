@@ -36,7 +36,7 @@ This build uses a AWS Ubuntu image and installs Apache2 to serve as our organiza
 
 This build uses the production base image and deploys our application (creating an HTML file).
 
-- ```cd packer-2-webapp```
+- ```cd ../packer-2-webapp```
 - ```packer init .```
 - ```HCP_PACKER_BUILD_FINGERPRINT="$(date +%s)" packer build acme-webapp.pkr.hcl```
 - Create a *production* Channel for *acme-webapp*, and assign the built Iteration to it.
