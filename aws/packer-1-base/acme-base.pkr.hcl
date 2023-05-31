@@ -81,28 +81,16 @@ This is the base Ubuntu image + Our "Platform" (apache2)
     "sources.amazon-ebs.acme-base"
   ]
 
- # provisioner "shell" {
- #   inline = [
- #     "sleep 10",
- #     "sudo apt -y update",
- #     "sudo apt -y install apache2",
- #     "sudo systemctl enable apache2",
- #     "sudo systemctl start apache2",
- #     "sudo chown -R ubuntu:ubuntu /var/www/html",
- #   ]
-#  }
- 
-    provisioner "shell" {
-    inline = [
+ provisioner "shell" {
+   inline = [
       "sleep 10",
-      "sudo apt-get purge apache2",
-      "sudo apt-get remove apache2",
-      "sudo apt-get purge libapache2-mod-php*",
-      "sudo apt-get purge php*",
-      "sudo apt-get install apache2",
-      "sudo apt-get install php7.0 libapache2-mod-php7.0",
-      "sudo /etc/init.d/apache2 restart",
+      "sudo apt -y update",
+      "sudo apt -y install apache2",
+    #  "sudo systemctl enable apache2",
+     "sudo systemctl start apache2",
+      "sudo chown -R ubuntu:ubuntu /var/www/html",
     ]
-
   }
+ 
+
 }
